@@ -1,16 +1,5 @@
 [
 	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "customBaseURI_",
-				"type": "string"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -61,6 +50,76 @@
 		"type": "event"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[100]",
+				"name": "_users",
+				"type": "address[100]"
+			}
+		],
+		"name": "add100PresaleUsers",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "addPresaleUser",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -81,8 +140,13 @@
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
-				"name": "count",
+				"name": "_mintAmount",
 				"type": "uint256"
 			}
 		],
@@ -92,34 +156,47 @@
 		"type": "function"
 	},
 	{
-		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
+				"internalType": "bool",
+				"name": "_state",
+				"type": "bool"
+			}
+		],
+		"name": "pause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
-				"indexed": true,
 				"internalType": "address",
-				"name": "newOwner",
+				"name": "_user",
 				"type": "address"
 			}
 		],
-		"name": "OwnershipTransferred",
-		"type": "event"
+		"name": "removePresaleUser",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "renounceOwnership",
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "removeWhitelistUser",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "reveal",
+		"name": "renounceOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -197,7 +274,20 @@
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "customBaseURI_",
+				"name": "_newBaseExtension",
+				"type": "string"
+			}
+		],
+		"name": "setBaseExtension",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newBaseURI",
 				"type": "string"
 			}
 		],
@@ -209,40 +299,41 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bool",
-				"name": "saleIsActive_",
-				"type": "bool"
+				"internalType": "uint256",
+				"name": "_newCost",
+				"type": "uint256"
 			}
 		],
-		"name": "setSaleIsActive",
+		"name": "setCost",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": true,
 				"internalType": "uint256",
-				"name": "tokenId",
+				"name": "_newmaxMintAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "Transfer",
-		"type": "event"
+		"name": "setmaxMintAmount",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_newCost",
+				"type": "uint256"
+			}
+		],
+		"name": "setPresaleCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -281,6 +372,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "whitelistUser",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "withdraw",
 		"outputs": [],
@@ -290,12 +394,33 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_symbol",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_initBaseURI",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
-				"name": "minter",
+				"name": "owner",
 				"type": "address"
 			}
 		],
-		"name": "allowedMintCount",
+		"name": "balanceOf",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -307,14 +432,34 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "baseExtension",
+		"outputs": [
 			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
-		"name": "balanceOf",
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "baseURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "cost",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -370,7 +515,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "MAX_MULTIMINT",
+		"name": "maxMintAmount",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -383,20 +528,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "MAX_SUPPLY",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MINT_LIMIT_PER_WALLET",
+		"name": "maxSupply",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -454,7 +586,20 @@
 	},
 	{
 		"inputs": [],
-		"name": "PRICE",
+		"name": "paused",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "presaleCost",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -468,35 +613,12 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "salePrice",
-				"type": "uint256"
-			}
-		],
-		"name": "royaltyInfo",
-		"outputs": [
-			{
 				"internalType": "address",
-				"name": "receiver",
+				"name": "",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "royaltyAmount",
-				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "saleIsActive",
+		"name": "presaleWallets",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -543,6 +665,49 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenOfOwnerByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
 			}
@@ -566,6 +731,44 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "walletOfOwner",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "whitelisted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
