@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0x5362d39bd30d4a5c8f85CFa22f93Da69F86c6549",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x5362d39bd30d4a5c8f85cfa22f93da69f86c65492",
+  "CONTRACT_ADDRESS": "0xaa4028782f4f1000f0aea7ee0e030a4531f09fc7",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xaa4028782f4f1000f0aea7ee0e030a4531f09fc7",
   "NETWORK": {
     "NAME": "Ethereum",
     "SYMBOL": "ETH",
@@ -9,8 +9,8 @@
   "NFT_NAME": "Mytoken",
   "SYMBOL": "MYT",
   "MAX_SUPPLY": 1000,
-  "WEI_COST": 20000000000000000,
-  "DISPLAY_COST": 0.02,
+  "WEI_COST": 25000000000000000,
+  "DISPLAY_COST": 0.025,
   "GAS_LIMIT": 300000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/mytoken12345",
